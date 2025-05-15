@@ -2,12 +2,12 @@
 
 When JavaScript code runs:
 
-    ↘️ A **🌍 Global Execution Context** gets created and its added to call stack.
+↘️ A **🌍 Global Execution Context** gets created and its added to call stack.
 
-    An Execution Context has two components: **Memory** and **Code**. Execution Context created in two phases-
+An Execution Context has two components: **Memory** and **Code**. Execution Context created in two phases-
 
-    1. **📦 Memory Creation Phase**
-    2. **</> Code Execution Phase**
+1. **📦 Memory Creation Phase**
+2. **</> Code Execution Phase**
 
 Let’s walk through an example:
 
