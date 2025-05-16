@@ -43,3 +43,9 @@ Callbacks & Higher Order Functions simplify our code and keep it DRY, Callbacks 
     1. Assigned to variables and properties of other objects.
     2. Passed as arguments into functions.
     3. Returned as values from functions.
+
+    Higher Order Functions & Callbacks are crucial in JavaScript because
+
+    - Enable Functional Programming
+    - Eliminates DRY principle (map, filter and reduce)
+    - Enable asynchronouse programming.
