@@ -63,13 +63,15 @@ Note: const and let are hoisted but not initialized — they’re in the Tempora
 The function runs, calculates the result, and returns 6.
 
 Then:
-• Its Execution Context is **removed from the Call Stack**
-• Control goes back to the Global Execution Context
+
+- Its Execution Context is **removed from the Call Stack**
+- Control goes back to the Global Execution Context
 
 🏁 End of Program
 
 Once all functions are done:
-• Their Execution Contexts are removed
-• Finally, the **Global Execution Context** is also removed from the Call Stack
+
+- Their Execution Contexts are removed
+- Finally, the **Global Execution Context** is also removed from the Call Stack
 
 This means JavaScript has finished running your program.
