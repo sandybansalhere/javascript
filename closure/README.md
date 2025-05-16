@@ -21,7 +21,7 @@ const generatedFunc = createFunction();
 const result = generatedFunc(3);
 ```
 
-**🔹 Memory Creation Phase (Global)**
+**🔴 Memory Creation Phase (Global)**
 
 In this phase JavaScript setup the memory space:
 
@@ -31,31 +31,31 @@ In this phase JavaScript setup the memory space:
 
 Then:
 
-**🔸 Code Execution Phase (Global)**
+**🔴 Code Execution Phase (Global)**
 
-🟢 Line: `const generatedFunc = createFunction();`
+🔗 Line: `const generatedFunc = createFunction();`
 
 new Execution Context created for `createFunction()`
 
-**🔹 Memory Creation Phase - `createFunction`**
+**🟢 Memory Creation Phase - `createFunction`**
 
 - `multiplyBy2` is stored in memory
 
-**🔹 Code Execution Phase - `createFunction`**
+**🟢 Code Execution Phase - `createFunction`**
 
 - Returns `multiplyBy2`
 
 👉 Now `generatedFunc` now holds the reference to the `multiplyBy2` function
 
-✅ Important: Even though `createFunction` has finished execution, the returned `multiplyBy2` still has access to its original scope. This is where closure happens.
+‼️ Important: Even though `createFunction` has finished execution, the returned `multiplyBy2` still has access to its original scope. This is where closure happens.
 
-🟢 Line: `const result = generatedFunc(3);`
+🔗 Line: `const result = generatedFunc(3);`
 
-**🔹 Memory Creation Phase - `generatedFunc`(multiplyBy2)**
+**🔵 Memory Creation Phase - `generatedFunc`(multiplyBy2)**
 
 - `num` is `undefined`
 
-**🔹 Code Execution Phase - `generatedFunc`(multiplyBy2)**
+**🔵 Code Execution Phase - `generatedFunc`(multiplyBy2)**
 
 - `num` is set to 3
 - Returns 3 \* 2 = 6
