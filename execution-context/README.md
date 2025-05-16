@@ -22,56 +22,49 @@ function multiplyBy2(inputNumber) {
 var output = multiplyBy2(num);
 ```
 
-### 🌍 Global Execution Context
+**🔴 Memory Creation Phase - Global** (Call Stack: [Global Execution Context])
 
-**📦 Memory Creation Phase**: In this phase, JavaScript parses the code and sets up memory for variables and functions.
+- `num`: `Uninitialized` (TDZ)
+- `multiplyBy2`: is stored in memory with a reference to its code
+- `output`: `undefined`
 
-| Memory                                          | Code (Thread of execution) |
-| ----------------------------------------------- | -------------------------- |
-| `num`: `Uninitialized` (in TDZ)                 |                            |
-| `multiplyBy2` ✅ `function` (reference to func) |                            |
-| `output`: `undefined`                           |                            |
+‼️ IMPORTANT: `const` and `let` are hoisted but not initialized — they’re in the Temporal Dead Zone (TDZ).
 
-Note: const and let are hoisted but not initialized — they’re in the Temporal Dead Zone (TDZ).
+**🔴 Code Execution Phase - Global**
 
-**🧑‍💻 Code Execution Phase**: In this phase, JavaScript goes through the code line by line and executes it. This is the phase where actual values are assigned to variables. When the thread of execution encounters a function invocation, a brand new Execution Context is created and added to the Call Stack.
+- `num`: 3
+- 🔗 Line: `var output = multiplyBy2(num);`
 
-| Memory                                           | Code (Thread of execution) |
-| ------------------------------------------------ | -------------------------- |
-| `num`: 3                                         |                            |
-| `multiplyBy2`: ✅ `function` (reference to func) |                            |
-| `output`: `undefined`                            |                            |
+new Execution Context created for `multiplyBy2()`
 
-### Function Execution Context: `multiplyBy2(num)`
+**🟢 Memory Creation Phase - multiplyBy2** (Call Stack: [Global Execution Context, multiplyBy2])
 
-↘️ Whenever the function is executed, a new **Execution Context** is created and pushes it to the **Call Stack**.
+- `inputNumber`: `undefined`
+- `result`: `undefined`
 
-**📦 Memory Creation Phase**
+**🟢 Code Execution Phase - multiplyBy2**
 
-| Memory                     | Code (Thread of execution) |
-| -------------------------- | -------------------------- |
-| `inputNumber`: `undefined` |                            |
-| `result`: `undefined`      |                            |
+- `inputNumber`: 3
+- `result`: 3 \* 2 = 6
+- Returns 6
 
-**🧑‍💻 Code Execution Phase**
+Updated Call Stack: [Global Execution Context]
 
-| Memory           | Code (Thread of execution) |
-| ---------------- | -------------------------- |
-| `inputNumber`: 3 |                            |
-| `result`: 6      |                            |
+Execution Context for multiplyBy2 will be removed from Call Stack, and result will be stored in output and Control goes back to the Global Execution Context and There is no line left for execution Finally, the Global Execution Context is also removed from the Call Stack.
 
-The function runs, calculates the result, and returns 6.
-
-Then:
-
-- Its Execution Context is **removed from the Call Stack**
-- Control goes back to the Global Execution Context
+Call Stack: []
 
 🏁 End of Program
 
-Once all functions are done:
+---
 
-- Their Execution Contexts are removed
-- Finally, the **Global Execution Context** is also removed from the Call Stack
+    Summary
 
-This means JavaScript has finished running your program.
+    - Whenever JavaScript's program runs a Gloabl Execution Context gets created
+    - Each Execution Context has two components:
+        1. Memory (Variable Env)
+        2. Code (Thread of Execution)
+    - Execution Context created in two phase:
+        1. Memory Creation Phase
+        2. Code Execution Phase
+    - Whenever a function is invoked new Execution Context gets created
