@@ -3,4 +3,4 @@
 JavaScript principles, Callbacks & Higher Order functions, Closure, Classes/Prototypes & Asynchronicity.
 
 - **[Execution Context](./execution-context/README.md)**
-- **[Function and Callback](./function-callback/README.md)**
+- **[Function and Callback](./functions-callbacks/README.md)**
