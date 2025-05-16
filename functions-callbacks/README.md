@@ -1,4 +1,4 @@
-# Function & Callbacks
+# Functions & Callbacks
 
 ```js
 function tenSquared() {
@@ -22,14 +22,7 @@ nineSquare();
 
 We can make the generalized function to make it reusable by accepting a parameter:
 
-```js
-function square(num) {
-  return num * num;
-}
-
-square(10);
-square(9);
-```
+- **[Generalizing Functions](./generalizing-functions.js)**
 
 Parameters (placeholders) means we don't need to decide what data to run our functionality or until we run the function.
 
@@ -39,7 +32,7 @@ Parameters (placeholders) means we don't need to decide what data to run our fun
 
 Follows the same principle, we may not want to decide exactly what some of our functionality is until we run our function.
 
-- **[Higher Order Functions](./index.js)**
+- **[Higher Order Functions](./higher-order-functions.js)**
 
 ### Summary
 
