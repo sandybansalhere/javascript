@@ -1,6 +1,6 @@
 # 🚀 JavaScript under the hood
 
-JavaScript principles, Callbacks & Higher Order functions, Closure, Classes/Prototypes & Asynchronicity.
+Principles of JavaScript, Callbacks & Higher Order functions, Closure (Scope and Execution Context), Asynchronous JavaScript & the Event Loop, Classes & Prototypes.
 
 - **[Execution Context](./execution-context/README.md)**
-- **[Function and Callback](./functions-callbacks/README.md)**
+- **[Callbacks and Higher Order Functions](./callbacks-and-higher-order-functions/README.md)**
