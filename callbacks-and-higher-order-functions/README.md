@@ -36,6 +36,8 @@ Follows the same principle, we may not want to decide exactly what some of our f
 
 Callbacks & Higher Order Functions simplify our code and keep it DRY, Callbacks are core aspect of async JavaScript, and are under-the-hood of promises, async/await.
 
+---
+
     Summary
 
     Functions in JavaScript are first class objects, They can be treated like any other JavaScript object
