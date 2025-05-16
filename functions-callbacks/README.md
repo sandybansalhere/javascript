@@ -30,14 +30,16 @@ Parameters (placeholders) means we don't need to decide what data to run our fun
 
 ## 🔄 Higher Order Functions
 
-Follows the same principle, we may not want to decide exactly what some of our functionality is until we run our function.
+Follows the same principle, we may not want to decide exactly what some of our functionality is until we run our function. **Higher Order Functions are those function which takes function as an argument or return a function**.
 
 - **[Higher Order Functions](./higher-order-functions.js)**
 
-### Summary
+Callbacks & Higher Order Functions simplify our code and keep it DRY, Callbacks are core aspect of async JavaScript, and are under-the-hood of promises, async/await.
 
-Functions in JavaScript are first class objects, They can be treated like any other JavaScript object
+    Summary
 
-1. Assigned to variables and properties of other objects.
-2. Passed as arguments into functions.
-3. Returned as values from functions.
+    Functions in JavaScript are first class objects, They can be treated like any other JavaScript object
+
+    1. Assigned to variables and properties of other objects.
+    2. Passed as arguments into functions.
+    3. Returned as values from functions.
