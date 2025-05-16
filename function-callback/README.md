@@ -18,7 +18,7 @@ nineSquare();
 
 `tenSquared` and `nineSquared` are nearly identical functions, only changing the number. Here we are breaking **🔴 DRY - Don’t Repeat Yourself** principle.
 
-### ✅ Generalizing Functions
+## ✅ Generalizing Functions
 
 We can make the generalized function to make it reusable by accepting a parameter:
 
@@ -35,13 +35,15 @@ Parameters (placeholders) means we don't need to decide what data to run our fun
 
 - Then provide an actual value (argument) when we run the function.
 
-**Higher Order Functions** follows the same principle:
+## 🔄 Higher Order Functions
 
-- We may not want to decide exactly what some of our functionality is until we run our function.
+Follows the same principle, we may not want to decide exactly what some of our functionality is until we run our function.
 
-## Functions as argument (Callback)
+- **[Higher Order Functions](./index.js)**
 
-Functions in JavaScript = first class objects, They can be treated like any other JavaScript object
+### Summary
+
+Functions in JavaScript are first class objects, They can be treated like any other JavaScript object
 
 1. Assigned to variables and properties of other objects.
 2. Passed as arguments into functions.
