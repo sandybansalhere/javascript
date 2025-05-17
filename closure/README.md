@@ -1,6 +1,6 @@
 # ⚙️ Closure (Functions with memories)
 
-When a function is invoked, an **execution context** is created. This context has its own local memory (also called a variable environment). Once the function finishes executing, its local memory is deleted—except for the return value.
+When a function is invoked, an **execution context** is created. This context has its own local memory (also called a variable environment). Once the function finishes executing, its local memory is deleted except for the return value.
 
 But what if our functions could **keep data alive** between executions?
 
@@ -21,48 +21,60 @@ const generatedFunc = createFunction();
 const result = generatedFunc(3);
 ```
 
-**🔴 Memory Creation Phase (Global)**
+**🔴 Global Execution Context (Memory Creation Phase)**
 
-In this phase JavaScript setup the memory space:
+> Call Stack: [Global Execution Context]
 
 - `createdFunction` is stored in memory with a reference to its code.
 - `generatedFunc` is set to "Uninitialized" aka TDZ.
 - `result` is also set to "Uninitialized" aka TDZ.
 
-Then:
+**🔴 Global Execution Context (Code Execution Phase)**
 
-**🔴 Code Execution Phase (Global)**
+➡️ `const generatedFunc = createFunction();`
 
-🔗 Line: `const generatedFunc = createFunction();`
+📦 new Execution Context created for `createFunction()`
 
-new Execution Context created for `createFunction()`
+> Call Stack: [Global Execution Context, createFunction]
 
-**🟢 Memory Creation Phase - `createFunction`**
+**🟢 createFunction Execution Context (Memory Creation Phase)**
 
 - `multiplyBy2` is stored in memory
 
-**🟢 Code Execution Phase - `createFunction`**
+**🟢 createFunction Execution Context (Code Execution Phase)**
 
-- Returns `multiplyBy2`
+➡️ Returns `multiplyBy2`
 
-👉 Now `generatedFunc` now holds the reference to the `multiplyBy2` function
+> Call Stack: [Global Execution Context]
+
+🔗 Now `generatedFunc` now holds the reference to the `multiplyBy2` function
 
 ‼️ IMPORTANT: Even though `createFunction` has finished execution, the returned `multiplyBy2` still has access to its original scope. This is where closure happens.
 
-🔗 Line: `const result = generatedFunc(3);`
+↪️ Now control goes back to Global Execution Context
 
-**🔵 Memory Creation Phase - `generatedFunc`(multiplyBy2)**
+➡️ `const result = generatedFunc(3);`
+
+> Call Stack: [Global Execution Context, generatedFunc]
+
+**🔵 generatedFunc/multiplyBy2 Execution Context (Memory Creation Phase)**
 
 - `num` is `undefined`
 
-**🔵 Code Execution Phase - `generatedFunc`(multiplyBy2)**
+**🔵 generatedFunc/multiplyBy2 Execution Context (Code Execution Phase)**
 
 - `num` is set to 3
 - Returns 3 \* 2 = 6
 
----
+> Call Stack: [Global Execution Context]
 
 👉 So `result` become 3
+
+> Call Stack: []
+
+🏁 End of Program
+
+---
 
     Summary
 
