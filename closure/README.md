@@ -49,7 +49,7 @@ const result = generatedFunc(3);
 
 🔗 Now `generatedFunc` now holds the reference to the `multiplyBy2` function
 
-‼️ IMPORTANT: Even though `createFunction` has finished execution, the returned `multiplyBy2` still has access to its original scope. This is where closure happens.
+‼️ IMPORTANT: Even though `createFunction` has finished execution, the returned `multiplyBy2` still has access to its original scope via `[[scope]]`. This is where closure happens.
 
 ↪️ Now control goes back to Global Execution Context
 

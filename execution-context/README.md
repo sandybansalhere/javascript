@@ -6,7 +6,7 @@ When JavaScript code runs:
 
 An Execution Context has two components: **Memory** and **Code**. Execution Context created in two phases-
 
-1. **📦 Memory Creation Phase**
+1. **📦 Memory Creation Phase** - In this phase JavaScript setup the memory space
 2. **🧑‍💻 Code Execution Phase**
 
 Let’s walk through an example:
