@@ -31,7 +31,7 @@ const result = generatedFunc(3);
 
 **🔴 Global Execution Context (Code Execution Phase)**
 
-➡️ `const generatedFunc = createFunction();`
+- `const generatedFunc = createFunction();`
 
 📦 new Execution Context created for `createFunction()`
 
@@ -43,7 +43,7 @@ const result = generatedFunc(3);
 
 **🟢 createFunction Execution Context (Code Execution Phase)**
 
-➡️ Returns `multiplyBy2`
+- `return multiplyBy2`
 
 > Call Stack: [Global Execution Context]
 
@@ -53,7 +53,7 @@ const result = generatedFunc(3);
 
 ↪️ Now control goes back to Global Execution Context
 
-➡️ `const result = generatedFunc(3);`
+- `const result = generatedFunc(3);`
 
 > Call Stack: [Global Execution Context, generatedFunc]
 
@@ -68,7 +68,7 @@ const result = generatedFunc(3);
 
 > Call Stack: [Global Execution Context]
 
-👉 So `result` become 3
+🎉 So `result` become 6
 
 > Call Stack: []
 
